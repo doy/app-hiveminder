@@ -11,7 +11,7 @@ App::Hiveminder::Command::Create - Create a new task
 
 =cut
 
-sub command_names { qw/create c/ }
+sub command_names { qw/create c add/ }
 
 sub command {
     my $self = shift;

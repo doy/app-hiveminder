@@ -100,12 +100,7 @@ sub parse_args { # {{{
                 next;
             }
 
-            if (defined $ret->{$filter{name}}) {
-                push @{ $ret->{$filter{name}} }, $word;
-            }
-            else {
-                $ret->{$filter{name}} = [$word];
-            }
+            $ret->{$filter{name}} = $word;
             $filter{name} = '';
         }
     }

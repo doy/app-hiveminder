@@ -5,6 +5,12 @@ use App::Hiveminder::Utils qw/get_text_from_editor_or_cmdline display_tasks
                               update_tasks/;
 extends 'App::Hiveminder::Command';
 
+=head2 NAME
+
+App::Hiveminder::Command::Create - Creates a new task
+
+=cut
+
 sub command {
     my ($self, $args) = @_;
     $args = join " ", @$args;

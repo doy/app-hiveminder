@@ -16,7 +16,8 @@ sub command {
     my $self = shift;
 
     my $text = get_text_from_editor;
-    return display_tasks($self->hm->braindump($text, returns => 'tasks',
+    return display_tasks($self->hm,
+                         $self->hm->braindump($text, returns => 'tasks',
                                                      tokens  => [@_]))
         unless $text eq '';
     return '';

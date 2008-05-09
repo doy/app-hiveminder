@@ -21,7 +21,7 @@ sub command {
         my $updated_task = $self->hm->update_task($task, accepted => 0);
         # we get a task hash with each field undef if it succeeds
         if (!defined $updated_task->{id}) {
-            $ret .= "Declined " . display_tasks($task) . "\n";
+            $ret .= "Declined " . display_tasks($self->hm, $task) . "\n";
         }
     }
 

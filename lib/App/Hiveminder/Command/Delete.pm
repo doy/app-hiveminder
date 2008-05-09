@@ -17,7 +17,7 @@ sub command {
     # XXX: offer an interactive mode here, possibly
     my $ret = '';
     for my $locator (@_) {
-        my $desc = display_tasks($self->hm->read_task($locator));
+        my $desc = display_tasks($self->hm, $self->hm->read_task($locator));
         $ret .= "Deleted $desc\n";
         eval { $self->hm->delete('Task', id => $self->hm->loc2id($locator)) };
         warn $@ unless $@ =~ /404 Not Found/;

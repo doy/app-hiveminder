@@ -10,4 +10,5 @@ has hm => (
     default => sub { Net::Hiveminder->new(use_config => 1) },
 );
 
+__PACKAGE__->meta()->make_immutable();
 1;

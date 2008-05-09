@@ -7,7 +7,7 @@ extends 'App::Hiveminder::Command';
 
 =head2 NAME
 
-App::Hiveminder::Command::Create - Creates a new task
+App::Hiveminder::Command::Create - Create a new task
 
 =cut
 

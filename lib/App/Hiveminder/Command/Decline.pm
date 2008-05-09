@@ -17,8 +17,8 @@ sub command {
 
     return unless @_ > 0;
     my $ret = '';
-    for my $task ($hm->get_tasks(%{ parse_args @_ })) {
-        my $updated_task = $hm->update_task($task, accepted => 0);
+    for my $task ($self->hm->get_tasks(%{ parse_args @_ })) {
+        my $updated_task = $self->hm->update_task($task, accepted => 0);
         # we get a task hash with each field undef if it succeeds
         if (!defined $updated_task->{id}) {
             $ret .= "Declined " . display_tasks($task) . "\n";

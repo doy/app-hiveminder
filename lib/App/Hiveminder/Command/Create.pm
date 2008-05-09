@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-package App::Hiveminder::Command::create;
+package App::Hiveminder::Command::Create;
 use Moose;
 use App::Hiveminder::Utils qw/get_text_from_editor_or_cmdline display_tasks
                               update_tasks/;

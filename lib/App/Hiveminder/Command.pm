@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-package App::Hiveminder::Base;
+package App::Hiveminder::Command;
 use Moose;
 use Net::Hiveminder;
 extends 'MooseX::App::Cmd::Command';

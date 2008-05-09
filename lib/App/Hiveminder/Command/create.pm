@@ -3,7 +3,7 @@ package App::Hiveminder::Command::create;
 use Moose;
 use App::Hiveminder::Utils qw/get_text_from_editor_or_cmdline display_tasks
                               update_tasks/;
-extends 'App::Hiveminder::Base';
+extends 'App::Hiveminder::Command';
 
 sub run {
     my ($self, $opt, $args) = @_;

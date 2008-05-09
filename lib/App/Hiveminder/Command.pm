@@ -8,6 +8,7 @@ has _hm => (
     isa     => 'Net::Hiveminder',
     is      => 'ro',
     default => sub { Net::Hiveminder->new(use_config => 1) },
+    lazy    => 1,
     reader  => 'hm',
 );
 

@@ -14,10 +14,9 @@ App::Hiveminder::Command::Create - Create a new task
 sub command_names { qw/create c/ }
 
 sub command {
-    my ($self, $args) = @_;
-    $args = join " ", @$args;
+    my $self = shift;
 
-    my $text = get_text_from_editor_or_cmdline($args);
+    my $text = get_text_from_editor_or_cmdline(@_);
     return '' if $text eq '';
     my @text = split "\n", $text;
 

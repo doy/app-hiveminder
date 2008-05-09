@@ -13,11 +13,11 @@ App::Hiveminder::Command::Braindump - Create several tasks at once
 sub command_names { qw/braindump bd/ }
 
 sub command {
-    my ($self, $args) = @_;
+    my $self = shift;
 
     my $text = get_text_from_editor;
     return display_tasks($self->hm->braindump($text, returns => 'tasks',
-                                                     tokens  => [@$args]))
+                                                     tokens  => [@_]))
         unless $text eq '';
     return '';
 }

@@ -14,7 +14,7 @@ has _hm => (
 sub run {
     my ($self, $opt, $args) = @_;
 
-    my $result = $self->command($args);
+    my $result = $self->command(@$args);
 
     if (defined $result) {
         chomp $result;

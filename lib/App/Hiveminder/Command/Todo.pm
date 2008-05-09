@@ -13,8 +13,8 @@ App::Hiveminder::Command::Todo - Display the current todo list
 sub command_names { qw/todo t/ }
 
 sub command {
-    my ($self, $args) = @_;
-    my %args = %{ parse_args @$args };
+    my $self = shift;
+    my %args = %{ parse_args @_ };
     $args{complete_not} = 0 if exists $args{complete} &&
                                $args{complete} == 1 &&
                                !exists $args{complete_not};

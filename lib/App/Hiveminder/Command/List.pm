@@ -13,11 +13,11 @@ App::Hiveminder::Command::List - List tasks
 sub command_names { qw/list ls find/ }
 
 sub command {
-    my ($self, $args) = @_;
+    my $self = shift;
 
     return unless @_ > 0;
     return display_tasks($self->hm,
-                         $self->hm->get_tasks(%{ parse_args @$args }));
+                         $self->hm->get_tasks(%{ parse_args @_ }));
 }
 
 1;

@@ -13,10 +13,10 @@ App::Hiveminder::Command::Delete - Delete a task by locator
 sub command_names { qw/delete rm del/ }
 
 sub command {
-    my ($self, $args) = @_;
+    my $self = shift;
     # XXX: offer an interactive mode here, possibly
     my $ret = '';
-    for my $locator (@$args) {
+    for my $locator (@_) {
         my $desc = display_tasks($self->hm->read_task($locator));
         $ret .= "Deleted $desc\n";
         eval { $self->hm->delete('Task', id => $self->hm->loc2id($locator)) };

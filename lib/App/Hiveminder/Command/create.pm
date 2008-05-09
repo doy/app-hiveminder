@@ -7,10 +7,7 @@ extends 'App::Hiveminder::Command';
 
 sub run {
     my ($self, $opt, $args) = @_;
-    print "Running create...\n";
-    print "$_\n" for @$args;
     $args = join " ", @$args;
-
 
     my $text = get_text_from_editor_or_cmdline($args);
     return '' if $text eq '';

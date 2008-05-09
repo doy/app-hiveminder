@@ -26,5 +26,9 @@ sub run {
     }
 }
 
+sub command {
+    die shift->usage_error("This command is not implemented.");
+}
+
 __PACKAGE__->meta()->make_immutable();
 1;

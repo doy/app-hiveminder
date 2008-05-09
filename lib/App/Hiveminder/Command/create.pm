@@ -5,8 +5,8 @@ use App::Hiveminder::Utils qw/get_text_from_editor_or_cmdline display_tasks
                               update_tasks/;
 extends 'App::Hiveminder::Command';
 
-sub run {
-    my ($self, $opt, $args) = @_;
+sub command {
+    my ($self, $args) = @_;
     $args = join " ", @$args;
 
     my $text = get_text_from_editor_or_cmdline($args);
@@ -22,7 +22,7 @@ sub run {
                             sub { (description => (join "\n", @text)) }) });
     }
 
-    print $ret, "\n";
+    return $ret;
 }
 
 __PACKAGE__->meta()->make_immutable();

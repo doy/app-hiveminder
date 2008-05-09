@@ -10,5 +10,20 @@ has hm => (
     default => sub { Net::Hiveminder->new(use_config => 1) },
 );
 
+sub run {
+    my ($self, $opt, $args) = @_;
+
+    my $result = $self->command($args);
+
+    if (defined $result) {
+        chomp $result;
+        $result .= "\n" if length $result > 0;
+        print $result;
+    }
+    else {
+        die $self->usage->text;
+    }
+}
+
 __PACKAGE__->meta()->make_immutable();
 1;

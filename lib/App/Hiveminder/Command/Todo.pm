@@ -10,6 +10,8 @@ App::Hiveminder::Command::Todo - Display the current todo list
 
 =cut
 
+sub command_names { qw/todo t/ }
+
 sub command {
     my ($self, $args) = @_;
     my %args = %{ parse_args @$args };

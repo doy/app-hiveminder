@@ -20,7 +20,7 @@ sub command {
     my $task = $self->hm->read_task(shift);
     my $description = get_text_from_editor_or_cmdline(@_);
     chomp $description;
-    $task = update_tasks($self->hm, [$hm->id2loc($task->{id})],
+    $task = update_tasks($self->hm, [$self->hm->id2loc($task->{id})],
                          sub { (description => $description) })->[0];
     my $display = display_tasks($self->hm, $task);
     return "Description for $display:\n$task->{description}\n";

@@ -16,7 +16,7 @@ sub command {
 
     return unless @_ > 0;
     my $filename = shift;
-    $hm->upload_file($filename);
+    $self->hm->upload_file($filename);
     return $filename;
 }
 

@@ -11,6 +11,8 @@ App::Hiveminder::Command::Create - Create a new task
 
 =cut
 
+sub command_names { qw/create c/ }
+
 sub command {
     my ($self, $args) = @_;
     $args = join " ", @$args;

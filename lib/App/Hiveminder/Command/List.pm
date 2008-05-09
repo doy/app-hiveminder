@@ -10,7 +10,7 @@ App::Hiveminder::Command::List - List tasks
 
 =cut
 
-sub command_names { qw/list ls/ }
+sub command_names { qw/list ls find/ }
 
 sub command {
     my ($self, $args) = @_;
